@@ -1,7 +1,9 @@
-import { getWorkshops, logout, createParticipant } from '../fetch-utils.js';
+import { checkAuth, getWorkshops, logout, createParticipant } from '../fetch-utils.js';
+
+checkAuth();
 
 const form = document.querySelector('form');
-const logoutButton = document.querySelector('logout');
+const logoutButton = document.getElementById('logout');
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -34,4 +36,5 @@ form.addEventListener('submit', async(e) => {
         contact: contact,
         workshop_id: workshop_id
     });
+    window.location.href = '../workshops';
 });
