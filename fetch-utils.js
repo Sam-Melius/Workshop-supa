@@ -11,6 +11,16 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function deleteParticipant(participantId) {
+    const response = await client
+        .from('workshop_participants')
+        .delete()
+        .match({ id: participantId })
+        .single();
+
+    return checkError(response);
+}
+
 
 export async function getUser() {
     return client.auth.session();
