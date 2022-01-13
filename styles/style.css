@@ -19,7 +19,8 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color: olivedrab;
+    color: whitesmoke;
 }
 
 main {
@@ -128,4 +129,34 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+
+label {
+    display: block;
+}
+
+.workshop {
+    border: solid 5px blueviolet;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    color:cadetblue;
+    background-color: crimson;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.participant {
+    cursor: pointer;
+    
+}
+
+.participant:hover {
+    background-color: darkblue;
+}
+
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: whitesmoke
+
 }
