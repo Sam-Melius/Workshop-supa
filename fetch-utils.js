@@ -21,6 +21,14 @@ export async function deleteParticipant(participantId) {
     return checkError(response);
 }
 
+export async function createParticipant(participant) {
+    const response = await client
+        .from('workshop_participants')
+        .insert(participant);
+
+    return checkError(response);
+}
+
 
 export async function getUser() {
     return client.auth.session();

@@ -1,5 +1,5 @@
 import { checkAuth, logout, getWorkshops, deleteParticipant } from '../fetch-utils.js';
-
+import { renderParticipant } from '../render-utils.js';
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
@@ -25,15 +25,15 @@ async function displayWorkshops() {
         workshopEL.append(nameEl, participantsEl);
 
         for (let participant of workshop.workshop_participants) {
-            const participantEl = document.createElement('p');
-            participantEl.classList.add('participant');
+            const participantEl = renderParticipant(participant);
+            
 
             participantEl.addEventListener('click', async() => {
                 await deleteParticipant(participant.id);
                 displayWorkshops();
             });
-            participantEl.textContent = `${participant.name}`;
-            participantsEl.append(participantEl);
+            
+            participantsEl.append(participantEl); 
         }
         workshopsListEl.append(workshopEL);
     }
